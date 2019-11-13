@@ -1,0 +1,20 @@
+ ^ stackLayout {
+  -xf-orientation: vertical;
+  background-color: #EE007F8B 8B;
+}
+grid > label {
+  color: #EEE017;
+  font-size: large;
+}
+grid > button {
+  background-color: #EE0E009C 9C;
+  color: #0BCC1C;
+}
+stackLayout > label {
+  color: #EEE017;
+  font-size: micro;
+}
+stackLayout > button {
+  background-color: #EE007F8B 8B;
+  height: 40;
+}
