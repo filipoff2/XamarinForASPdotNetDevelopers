@@ -1,0 +1,2 @@
+https://medium.com/@benetskyybogdan/less-with-xamarin-forms-efb9ad76cc1a
+https://github.com/bbenetskyy/StyledApp-Xamarin-Less
