@@ -10,6 +10,8 @@ namespace Xam4AspNetPrism.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+        public string SubTitle => "sksksk";
+
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
