@@ -6,14 +6,14 @@
       xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
       prism:ViewModelLocator.AutowireViewModel="False"
             xmlns:mvvm="clr-namespace:Xam4AspNetPrism;assembly=Xam4AspNetPrism"
-            BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModePL}}"
+            BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModeEL}}"
              >
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="@@@@Welcome to Xamarin Forms and Prism !!!!!!!!!!!" />
         <Label Text="{Binding Title}" TextColor="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}" />
         <Label Text="{Binding SubTitle}" />
-        <Entry Text="{Binding EntryText}"   />
+        <Entry Text="{Binding EntryText}"  Keyboard="Numeric" />
         <Label Text="{Binding LabelText}"  HorizontalOptions="EndAndExpand"/>
         <Button Text="{Binding ButtonText}" Command="{Binding SubmitCommand}"  Margin="160"/>
     </StackLayout>

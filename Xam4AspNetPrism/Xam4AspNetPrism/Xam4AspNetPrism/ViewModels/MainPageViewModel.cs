@@ -35,7 +35,7 @@ namespace Xam4AspNetPrism.ViewModels
         {
             //implement logic
             // USGLY SAMPLE LOGIC = No cultureInfo
-            LabelText = Title + " " + EntryText + " £";
+            LabelText = Title + " " + EntryText + " € ";
 
             if (UglyCurtureTextForSample == "UK")
             {
