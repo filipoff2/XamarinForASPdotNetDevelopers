@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bogus;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -42,14 +43,21 @@ namespace Xam4AspNetPrism
         }
         public static MainPageViewModel MainPageViewModeEn2
         {
-            get { return new MainPageViewModel(null) { UglyCurtureTextForSample = "UK", Title = "English2", ButtonText = "Invoices" + "£ " + demoSum }; }
+            get { return new MainPageViewModel(null) { Monkeys = CreateGeneratedDemoData(1), UglyCurtureTextForSample = "UK", Title = "English2", ButtonText = "Invoices" + "£ " + demoSum }; }
         }
 
+        public static MainPageViewModel MainPageViewModeEn10
+        {
+            get { return new MainPageViewModel(null) { Monkeys = CreateGeneratedDemoData(10), UglyCurtureTextForSample = "UK", Title = "English2" }; }
+        }
+
+        public static MainPageViewModel MainPageViewModeEn100
+        {
+            get { return new MainPageViewModel(null) { Monkeys = CreateGeneratedDemoData(100), UglyCurtureTextForSample = "UK", Title = "English2"}; }
+        }
 
         public class Monkey
-
         {
-
             public string Name { get; set; }
 
             public string Location { get; set; }
@@ -58,15 +66,26 @@ namespace Xam4AspNetPrism
 
             public string ImageUrl { get; set; }
 
-            public Color RowColor { get; set; }
+            public string Price { get; set; }
 
+            public string Quantity { get; set; }
+
+            public string ShortDecription { get; set; }
+
+            public string Avatar { get; set; }
+
+            public string ResposiblePeson { get; set; }
+
+
+            public Color RowColor { get; set; }
         }
 
         static ObservableCollection<Monkey> CreateMonkeyCollection()
 
         {
             
-            IList<Monkey> source = source = new List<Monkey>();
+            IList<Monkey> source = new List<Monkey>();
+
             for (int i = 0; i < 100; i++)
             {
                 source.Add(new Monkey
@@ -341,8 +360,38 @@ namespace Xam4AspNetPrism
             }
 
 
-
            return new ObservableCollection<Monkey>(source);
+        }
+
+
+        static ObservableCollection<Monkey> CreateGeneratedDemoData(int itemCount)
+        {
+            IList<Monkey> source = new List<Monkey>();
+            var productImages = new[] { 
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Bouteille.jpg/150px-Bouteille.jpg", //portrait  image
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Bowling_Pins_Being_Hit_by_a_Bowling_Ball_-_PINSTACK_Plano_%282015-04-10_19.34.19_by_Nan_Palmero%29.jpg/220px-Bowling_Pins_Being_Hit_by_a_Bowling_Ball_-_PINSTACK_Plano_%282015-04-10_19.34.19_by_Nan_Palmero%29.jpg", // landscape image
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Central_heating_unit.jpg/250px-Central_heating_unit.jpg",
+                null,
+                "nill",
+                "https://pl.wikipedia.org/wiki/Scalable_Vector_Graphics#/media/Plik:SVG_logo.svg"
+            };
+
+            var testProducts = new Faker<Monkey>().CustomInstantiator(f => new Monkey())
+                .RuleFor(m => m.Details, f => f.Lorem.Sentence())
+                .RuleFor(m => m.ImageUrl, f => f.PickRandom(productImages))
+                .RuleFor(m => m.Quantity, f => f.Random.Number(1, 10).ToString("0.##") + "Kg")//todo intenatolization
+                .RuleFor(u => u.Avatar, f => f.Internet.Avatar())
+                .RuleFor(u => u.ResposiblePeson, f => f.Person.FullName)
+            ;
+
+            for (int i = 0; i < itemCount; i++)
+            {
+                var s = testProducts.Generate();
+                source.Add(s);
+            }
+
+
+            return new ObservableCollection<Monkey>(source);
         }
     }
 }

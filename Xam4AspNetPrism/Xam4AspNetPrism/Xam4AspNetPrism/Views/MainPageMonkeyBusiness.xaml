@@ -4,7 +4,7 @@
              x:Class="Xam4AspNetPrism.Views.MainPageMonkeyBusiness"
              Title="{Binding Title}"
              xmlns:mvvm="clr-namespace:Xam4AspNetPrism;assembly=Xam4AspNetPrism"
-                BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModeEL}}"
+                BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModeEn100}}"
              >
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
@@ -22,18 +22,18 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Image Grid.RowSpan="2" 
-                               Source="{Binding ImageUrl}" 
+                               Source="{Binding Avatar}" 
                                Aspect="AspectFill"
                                HeightRequest="60" 
                                WidthRequest="60" 
-                               BackgroundColor="Red"/>
+                               BackgroundColor="Accent"/>
                         <Label Grid.Column="1" 
-                               Text="{Binding Name}" 
+                               Text="{Binding Quantity}" 
                                FontAttributes="Bold"
                                FontSize="20"/>
                         <Label Grid.Row="1"
                                Grid.Column="1" 
-                               Text="{Binding Location}"
+                               Text="{Binding ResposiblePeson}"
                                FontAttributes="Italic" 
                                FontSize="Medium"
                                VerticalOptions="End" />
