@@ -4,7 +4,7 @@
              x:Class="Xam4AspNetPrism.Views.MainPageMonkeyBusiness"
              Title="{Binding Title}"
              xmlns:mvvm="clr-namespace:Xam4AspNetPrism;assembly=Xam4AspNetPrism"
-                BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModeEL}"
+                BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModeEL}}"
              >
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
