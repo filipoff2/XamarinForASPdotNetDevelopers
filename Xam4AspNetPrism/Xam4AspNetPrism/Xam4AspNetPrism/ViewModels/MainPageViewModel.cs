@@ -3,8 +3,10 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using static Xam4AspNetPrism.DesignDataLoacator;
 
 namespace Xam4AspNetPrism.ViewModels
 {
@@ -20,6 +22,8 @@ namespace Xam4AspNetPrism.ViewModels
 
         public string LabelText { get; set; }
         #endregion
+
+        public ObservableCollection<Monkey> Monkeys { get; set; }
 
         public DelegateCommand SubmitCommand { get; private set; }
 

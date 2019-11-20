@@ -23,13 +23,17 @@ namespace Xam4AspNetPrism
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            // await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            // await NavigationService.NavigateAsync("NavigationPage/MainPageBad");
+            await NavigationService.NavigateAsync("NavigationPage/MainPageMonkeyBusiness");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<MainPageBad, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<MainPageMonkeyBusiness, MainPageViewModel>();
         }
     }
 }
