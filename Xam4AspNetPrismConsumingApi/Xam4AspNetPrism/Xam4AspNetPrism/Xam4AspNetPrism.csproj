@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="28.4.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.991211" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1367" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MainPageMonkeyBusiness.xaml.cs">
+      <DependentUpon>MainPageMonkeyBusiness.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainPageBad.xaml.cs">
+      <DependentUpon>MainPageBad.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

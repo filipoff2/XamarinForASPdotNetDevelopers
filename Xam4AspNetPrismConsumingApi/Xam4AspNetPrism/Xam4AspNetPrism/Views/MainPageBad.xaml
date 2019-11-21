@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam4AspNetPrism.Views.MainPageBad"
+             Title="{Binding Title}"
+      xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+      prism:ViewModelLocator.AutowireViewModel="False"
+            xmlns:mvvm="clr-namespace:Xam4AspNetPrism;assembly=Xam4AspNetPrism"
+            BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModeEL}}"
+             >
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="BADly designed UI" />
+        <CollectionView ItemsSource="{Binding Monkeys}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="{Binding ImageUrl}" Aspect="AspectFill" BackgroundColor="AliceBlue"/>
+                        <Label Text="{Binding Name}" FontAttributes="Bold" />
+                        <Label Text="{Binding Location}" FontAttributes="Italic" VerticalOptions="End" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

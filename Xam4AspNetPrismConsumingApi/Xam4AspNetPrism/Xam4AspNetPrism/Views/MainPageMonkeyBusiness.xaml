@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam4AspNetPrism.Views.MainPageMonkeyBusiness"
+             Title="{Binding Title}"
+             xmlns:mvvm="clr-namespace:Xam4AspNetPrism;assembly=Xam4AspNetPrism"
+                BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModeEn100}}"
+             >
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="MainPage: Modified James Monkey Business" />
+        <CollectionView ItemsSource="{Binding Monkeys}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" 
+                               Source="{Binding Avatar}" 
+                               Aspect="AspectFill"
+                               HeightRequest="60" 
+                               WidthRequest="60" 
+                               BackgroundColor="Accent"/>
+                        <Label Grid.Column="1" 
+                               Text="{Binding Quantity}" 
+                               FontAttributes="Bold"
+                               FontSize="20"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="1" 
+                               Text="{Binding ResposiblePeson}"
+                               FontAttributes="Italic" 
+                               FontSize="Medium"
+                               VerticalOptions="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam4AspNetPrism.Views.MainPage"
+             Title="{Binding Title}"
+      xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+      prism:ViewModelLocator.AutowireViewModel="False"
+            xmlns:mvvm="clr-namespace:Xam4AspNetPrism;assembly=Xam4AspNetPrism"
+            BindingContext="{Binding Source={x:Static mvvm:DesignDataLoacator.MainPageViewModeEL}}"
+             >
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="@@@@Welcome to Xamarin Forms and Prism !!!!!!!!!!!" />
+        <Label Text="{Binding Title}" TextColor="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}" />
+        <Label Text="{Binding SubTitle}" />
+        <Entry Text="{Binding EntryText}"  Keyboard="Numeric" />
+        <Label Text="{Binding LabelText}"  HorizontalOptions="EndAndExpand"/>
+        <Button Text="{Binding ButtonText}" Command="{Binding SubmitCommand}"  Margin="160,0"/>
+        <CollectionView ItemsSource="{Binding Monkeys}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" 
+                               Source="{Binding ImageUrl}" 
+                               Aspect="AspectFill"
+                               HeightRequest="60" 
+                               WidthRequest="60" />
+                        <Label Grid.Column="1" 
+                               Text="{Binding Name}" 
+                               FontAttributes="Bold" />
+                        <Label Grid.Row="1"
+                               Grid.Column="1" 
+                               Text="{Binding Location}"
+                               FontAttributes="Italic" 
+                               VerticalOptions="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
