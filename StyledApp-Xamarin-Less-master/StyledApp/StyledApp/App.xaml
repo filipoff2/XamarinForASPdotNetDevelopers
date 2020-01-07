@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows" 
              x:Class="StyledApp.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="rainbows:DebugRainbow.ShowColors" Value="True" />
+                <Setter Property="rainbows:DebugRainbow.ShowGrid" Value="True" />
+                <Setter Property="rainbows:DebugRainbow.GridLineColor" Value="Orange" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
