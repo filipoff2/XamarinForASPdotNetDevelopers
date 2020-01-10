@@ -20,9 +20,7 @@ namespace WebZoomImages.Controllers
         [HttpPost]
         public async Task<HttpResponseMessage> Save()
         {
-            // ***********************************************************************************************
-            // This method has custom Swagger definition hidden in class SwaggerRequestFileContentTypeAttibute
-            // ***********************************************************************************************
+            //todo 
             if (!Request.Form.Files.Any())
             {
                 UploadImage model = new UploadImage();
