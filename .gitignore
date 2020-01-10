@@ -23,3 +23,11 @@ Xam4AspNetPrismConsumingApi/Xam4AspNetPrismConsumingApi/obj/
 ZoomImages/.vs/
 ZoomImages/ZoomImages/obj/
 ZoomImages/ZoomImages/bin/
+MobileZoomImages/.vs/
+MobileZoomImages/MobileZoomImages/MobileZoomImages.Android/bin/
+MobileZoomImages/MobileZoomImages/MobileZoomImages.Android/obj/
+MobileZoomImages/MobileZoomImages/MobileZoomImages.iOS/bin/
+MobileZoomImages/MobileZoomImages/MobileZoomImages.iOS/obj/
+MobileZoomImages/MobileZoomImages/MobileZoomImages/bin/
+MobileZoomImages/MobileZoomImages/MobileZoomImages/obj/
+ZoomImages/ZoomImages/WebZoomImages.csproj.user
