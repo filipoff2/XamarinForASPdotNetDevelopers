@@ -47,11 +47,8 @@ namespace WebZoomImages.Controllers
         public async Task<IActionResult> UploadImage(UploadImage uploadImage)
         {
 
-            //var files = HttpContext.Request.Form.Files; ;
             var files = uploadImage.FileUpload;
-
-            long size = 0;
-
+            
             foreach (var formFileTemp in files)
             {
                 if (formFileTemp.Length > 0)
@@ -65,10 +62,7 @@ namespace WebZoomImages.Controllers
                 }
             }
 
-            // Process uploaded files
-            // Don't rely on or trust the FileName property without validation.
-
-            return Ok(new { count = files.Count, size, filePath });
+            return Ok(new { count = files.Count, filePath });
         }
     }
 }
