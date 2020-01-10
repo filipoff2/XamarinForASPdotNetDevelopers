@@ -8,12 +8,14 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.Swagger.Annotations;
 using WebZoomImages.Models;
 
 namespace WebZoomImages.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/FileApi")]
     [ApiController]
+    [SwaggerResponse(HttpStatusCode.OK, Type = typeof(UploadImage))]
     public class FileApiController : ControllerBase
     {
         [Route("save")]
