@@ -31,3 +31,8 @@ MobileZoomImages/MobileZoomImages/MobileZoomImages.iOS/obj/
 MobileZoomImages/MobileZoomImages/MobileZoomImages/bin/
 MobileZoomImages/MobileZoomImages/MobileZoomImages/obj/
 ZoomImages/ZoomImages/WebZoomImages.csproj.user
+MobileZoomImages/MediaSample/MediaSample.Droid/bin/
+MobileZoomImages/MediaSample/MediaSample.Droid/obj/
+ZoomImages/ZoomImages/.config/dotnet-tools.json
+ZoomImages/ZoomImages/Properties/PublishProfiles/FolderProfile.pubxml
+ZoomImages/ZoomImages/Properties/PublishProfiles/FolderProfile.pubxml.user
