@@ -1,0 +1,31 @@
+﻿
+@model WebZoomImages.Models.UploadImage
+
+@{
+    ViewData["Title"] = "Upload Image";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to UploadImage</p>
+<p>One or more files can be selected by the visitor. The following form's page handler saves the file(s) to disk.</p>
+
+<form enctype="multipart/form-data" method="post">
+    <dl>
+        <dt>
+            <label asp-for="FileUpload"></label>
+        </dt>
+        <dd>
+            <input asp-for="FileUpload" type="file" multiple />
+            <span asp-validation-for="FileUpload"></span>
+        </dd>
+
+        <dt>
+            <label asp-for="Zoom"></label>
+        </dt>
+        <dd>
+            <input asp-for="Zoom" type="text" />
+            <span asp-validation-for="Zoom"></span>
+        </dd>
+    </dl>
+    <input class="btn" type="submit" value="Upload" />
+</form>
